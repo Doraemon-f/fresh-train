@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 #-------------CopyRight--------------  
-# Name: 
-# Annotation: 
+# Name: curl.sh
+# Annotation: 第一道题
 # Version Number: 1.00
 # Language: bash shell
 # Date: 2017-11-20  
 # Author: shiyu.feng
 # Email: shiyu.feng@qunar.com
-# Execute: sudo -uwirelessdev ./.sh >> .log 2>&1 &
+# Execute: sh curl.sh
 #-------------CopyRight--------------
 
 

@@ -13,3 +13,4 @@ gen
 *.txt
 *.log
 *.rar
+*.DS_Store

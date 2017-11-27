@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 #-------------CopyRight--------------  
-# Name: 
-# Annotation: 
+# Name: find.sh
+# Annotation: 第二道题
 # Version Number: 1.00
 # Language: bash shell
 # Date: 2017-11-24  
 # Author: shiyu.feng
 # Email: shiyu.feng@qunar.com
-# Execute: sudo -uwirelessdev ./.sh >> .log 2>&1 &
+# Execute: sh find.sh ./dir1 ./dir2
 #-------------CopyRight--------------
 
 
