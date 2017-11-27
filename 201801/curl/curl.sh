@@ -16,31 +16,31 @@
 #--------------Prepare---------------
 
 
-
 #--------------Function--------------
 # $1 domain
 # $2 username
 # $3 password
 # $4 cookie file path
-function login() {
-    local DOMAIN=$1
+function login() { #函数
+    local DOMAIN=$1 #local
     local USERNAME=$2
     local PASSWORD=$3
     local COOKIE_FILE=$4
-    local API="/graduate/api/login"
+    local API="/graduate/api/login" # 单引号与双引号的区别
     local PARAM="username=%s&password=%s"
     local DATA=$(printf "${PARAM}" "${USERNAME}" "${PASSWORD}")
+    local HEADER="Content-Type: application/x-www-form-urlencoded"
     
-    if [ ! -d "$(dirname ${COOKIE_FILE})" ]; then
+    if [ ! -d "$(dirname ${COOKIE_FILE})" ]; then # if命令 basename&&dirname 绝对路径&相对路径 []&&test&&[[]]&&(()) 文件&&目录是否存在
         mkdir -p "${COOKIE_FILE}"
     fi
     touch "${COOKIE_FILE}"
 
     echo "====================LOGIN START===================="
-    local JSON=$(curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "${DATA}" -c "${COOKIE_FILE}" "${DOMAIN}${API}")
-    local CODE=$(echo ${JSON} | jq '.code')
+    local JSON=$(curl -X POST -H "${HEADER}" -d "${DATA}" -c "${COOKIE_FILE}" "${DOMAIN}${API}") # curl命令 ``&&$()&&$[]
+    local CODE=$(echo "${JSON}" | jq '.code')
 
-    if [ ${CODE} -eq 0 ]; then
+    if [ ${CODE} -eq 0 ]; then # 判断结果 数字&&字符串比较-eq -ge -gt -le -lt -ne = != < > ASCII字母排序
         echo "登录成功"
     else
         echo "$(echo ${JSON} | jq '.data')"
