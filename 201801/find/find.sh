@@ -43,6 +43,3 @@ calc_md5 "${FILE_NAME}" "${DIRS}"
 if [ $? -eq 0 ]; then
     group "${FILE_NAME}"
 fi
-
-
-shiyu.feng
